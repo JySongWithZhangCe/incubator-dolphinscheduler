@@ -188,6 +188,15 @@
           :create-node-id="id"
           :backfill-item="backfillItem">
         </m-sql>
+        <!-- sql node -->
+        <m-presto
+           v-if="taskType === 'PRESTO'"
+           @on-params="_onParams"
+           @on-cache-params="_onCacheParams"
+           ref="PRESTO"
+           :create-node-id="id"
+           :backfill-item="backfillItem">
+        </m-presto>
         <!-- spark node -->
         <m-spark
           v-if="taskType === 'SPARK'"
@@ -272,6 +281,7 @@
   import mLog from './log'
   import mMr from './tasks/mr'
   import mSql from './tasks/sql'
+  import mPresto from './tasks/presto'
   import i18n from '@/module/i18n'
   import mShell from './tasks/shell'
   import mSpark from './tasks/spark'
@@ -717,6 +727,7 @@
       mSubProcess,
       mProcedure,
       mSql,
+      mPresto,
       mLog,
       mSpark,
       mFlink,

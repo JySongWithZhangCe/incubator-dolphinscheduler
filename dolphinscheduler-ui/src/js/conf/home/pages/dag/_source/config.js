@@ -255,6 +255,10 @@ const tasksType = {
     desc: 'SQL',
     color: '#7A98A1'
   },
+  PRESTO: {
+      desc: 'PRESTO',
+      color: '#7A98A1'
+   },
   SPARK: {
     desc: 'SPARK',
     color: '#E46F13'
